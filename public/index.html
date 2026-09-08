@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Multi-Client Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Secure Multi-Client Chat</h2>
+
+    <div class="controls">
+        <input type="text" id="roomInput" placeholder="Room Name (e.g., General)">
+        <button onclick="joinRoom()">Join Room</button>
+        <button onclick="fetchHistory()" style="background-color: #28a745;">Load History</button>
+    </div>
+    <div id="messages"></div>
+
+    <div class="controls">
+        <input type="text" id="messageInput" placeholder="Type a text message..." style="flex-grow: 1;">
+        <button onclick="sendText()">Send</button>
+    </div>
+
+    <div class="controls media-controls">
+        <input type="file" id="mediaInput" accept="image/*,video/*">
+        <button onclick="uploadAndSendMedia()">Send Media</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
